@@ -1,0 +1,16 @@
+<form action="upload" enctype="multipart/form-data" method="post">
+  Upload image:
+  <input onchange="validateSize(this)" type="file" name="file" />
+  <input type="text" name="fuck" />
+  <input type="submit" value="Upload" action="javascript:void(0)" />
+  <script>
+    function validateSize(input) {
+      console.log('input:', input);
+      const fileSize = input.files[0].size / 1024 / 1024; // in MiB
+      console.log('fileSize:', fileSize.toFixed(2));
+
+      alert(fileSize);
+      // $(file).val(''); //for clearing with Jquery
+    }
+  </script>
+</form>
